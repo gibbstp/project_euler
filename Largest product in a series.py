@@ -29,13 +29,13 @@ import numpy as np
 
 def greatest_product():
     my_data = np.nan_to_num(np.genfromtxt('C:/Users/Tanner/Desktop/Largest Series of 13 number.txt', delimiter=','))
-    series = my_data[0:13]
+    n, i = 0, 0
     max_len = np.size(my_data) * 3
-    n, i = 1, 0
-    prev = np.prod(series)
+    series = my_data[n: n + 13]
+    prev = np.prod(my_data[0: 14])
     while i <= max_len:
-        next = np.prod(np.roll(series, n))
-        if next >= prev:
+        next = np.prod(series)
+        if next > prev:
             prev = next
         n += 1
         i += 1
