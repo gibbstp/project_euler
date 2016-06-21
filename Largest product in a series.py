@@ -25,7 +25,12 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 
 import numpy as np
 
+def csv_creation():
+with open("C:\Coding_projects\project_euler\Largest product in a series number.txt"), open('series_number_as_csv.txt', 'w') as infile, my_csv:
 
+    infile.rstrip()
+    for number in infile:
+        my_csv.write(number + ', ')
 
 def greatest_product():
     my_data = np.nan_to_num(np.genfromtxt('C:/Users/Tanner/Desktop/Largest Series of 13 number.txt', delimiter=','))
