@@ -28,16 +28,19 @@ import numpy as np
 def greatest_product():
     my_data = np.nan_to_num(np.genfromtxt('C:\coding_projects\python_3\project_euler\largest_product_number_2.txt', delimiter=','))
     n, i = 0, 0
-    series = np.roll(my_data, n)
-    prev = np.cumprod(my_data[0: 13])
-    next = np.cumprod(series[0:13])
 
-    while i <= np.size(my_data) * 3:
-        if np.max(next) > np.max(prev):
-            prev = next
+    while i <= 3000:
+        series = my_data[n: n + 13]
+        prev = np.cumprod(my_data[0: 13])
+        next = np.cumprod(series)
+
+        if n < 987:
+            if np.max(next) > np.max(prev):
+                prev = next
+        else:
+            n = 0
         n += 1
         i += 1
-        print(next)
     print(np.max(next))
 
 greatest_product()
