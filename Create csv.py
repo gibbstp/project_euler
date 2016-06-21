@@ -1,9 +1,12 @@
 import csv
 
 def csv_create():
-    with open('Largest product in a series number.txt', 'r') as infile, open('product_series_csv.txt', 'w') as my_csv:
-        #my_csv.rstrip(' ')
-        for number in infile:
-            my_csv.write(number)
+    with open('C:\coding_projects\python_3\project_euler\largest_product_number.txt', 'r') as infile, open('C:\coding_projects\python_3\project_euler\largest_product_number_2.csv', 'w') as outfile:
+        my_data = infile.read()
+        my_data = my_data.replace('\n', '')
+        list = []
+        for letter in my_data:
+            list.append(int(letter))
+        outfile.write(str(list))
 
 csv_create()
